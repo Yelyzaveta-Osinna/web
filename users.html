@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Користувачі - Укрзалізниця Lite</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">🚆 Укрзалізниця Lite</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Головна</a>
+                <a href="variant-page1.html">Квитки</a>
+                <a href="variant-page2.html">Рейси</a>
+                <a href="variant-page3.html">Пасажири</a>
+                <a href="users.html">Користувачі</a>
+            </div>
+            <div class="user-info">
+                <span class="username">👤 Admin</span>
+                <a href="index.html" class="btn btn-outline">Вийти</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="users-container">
+            <div class="users-header">
+                <h1>Користувачі системи</h1>
+                <a href="user-create-dialog.html" class="btn btn-primary">➕ Створити користувача</a>
+            </div>
+
+            <div class="users-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ім'я користувача</th>
+                            <th>Email</th>
+                            <th>Роль</th>
+                            <th>Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>admin@railway.com</td>
+                            <td>admin@railway.com</td>
+                            <td><span class="role-badge admin">Admin</span></td>
+                            <td class="actions">
+                                <a href="user-detail.html?id=1" class="btn btn-outline">Перегляд</a>
+                                <a href="user-edit.html?id=1" class="btn btn-warning">Редагувати</a>
+                                <a href="#" class="btn btn-danger">Видалити</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>petrenko@railway.com</td>
+                            <td>petrenko@railway.com</td>
+                            <td><span class="role-badge regular">Regular</span></td>
+                            <td class="actions">
+                                <a href="user-detail.html?id=2" class="btn btn-outline">Перегляд</a>
+                                <a href="user-edit.html?id=2" class="btn btn-warning">Редагувати</a>
+                                <a href="#" class="btn btn-danger">Видалити</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>shevchenko@railway.com</td>
+                            <td>shevchenko@railway.com</td>
+                            <td><span class="role-badge regular">Regular</span></td>
+                            <td class="actions">
+                                <a href="user-detail.html?id=3" class="btn btn-outline">Перегляд</a>
+                                <a href="user-edit.html?id=3" class="btn btn-warning">Редагувати</a>
+                                <a href="#" class="btn btn-danger">Видалити</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>kovalenko@railway.com</td>
+                            <td>kovalenko@railway.com</td>
+                            <td><span class="role-badge admin">Admin</span></td>
+                            <td class="actions">
+                                <a href="user-detail.html?id=4" class="btn btn-outline">Перегляд</a>
+                                <a href="user-edit.html?id=4" class="btn btn-warning">Редагувати</a>
+                                <a href="#" class="btn btn-danger">Видалити</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <span class="step-links">
+                    <a href="#">&laquo; Перша</a>
+                    <a href="#">Попередня</a>
+                    <span class="current">Сторінка 1 з 3</span>
+                    <a href="#">Наступна</a>
+                    <a href="#">Остання &raquo;</a>
+                </span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Статичне модальне вікно (завжди видиме для демонстрації або приховане) -->
+    <div id="createUserModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Створити нового користувача</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="validation-error">
+                    Демонстраційна версія. Для створення користувача перейдіть на сторінку реєстрації.
+                </div>
+                
+                <form action="user-create-dialog.html" method="get">
+                    <div class="form-group">
+                        <label for="newUsername">Логін *</label>
+                        <input type="text" id="newUsername" class="form-control" placeholder="Введіть логін">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newEmail">Email *</label>
+                        <input type="email" id="newEmail" class="form-control" placeholder="user@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">Пароль *</label>
+                        <input type="password" id="newPassword" class="form-control" placeholder="Мінімум 6 символів">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Підтвердіть пароль *</label>
+                        <input type="password" id="confirmPassword" class="form-control" placeholder="Повторіть пароль">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newRole">Роль *</label>
+                        <select id="newRole" class="form-select">
+                            <option value="regular">Звичайний користувач</option>
+                            <option value="admin">Адміністратор</option>
+                        </select>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary">Скасувати</button>
+                        <button type="submit" class="btn btn-primary">Створити</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Укрзалізниця Lite. Всі права захищено.</p>
+        </div>
+    </footer>
+</body>
+</html>

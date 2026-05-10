@@ -1,0 +1,203 @@
+@import 'variables';
+@import 'mixins';
+
+// Users container
+.users-container {
+    @include container;
+    padding: $spacing-xl 0;
+}
+
+// Header with actions
+.users-header {
+    @include flex-between;
+    margin-bottom: $spacing-xl;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    
+    h1 {
+        color: $primary-color;
+        margin: 0;
+    }
+}
+
+// Users table
+.users-table {
+    width: 100%;
+    background: $white;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        padding: $spacing-md;
+        text-align: left;
+        border-bottom: 1px solid $gray-200;
+    }
+    
+    th {
+        background: $gray-100;
+        font-weight: 600;
+        color: $gray-800;
+        cursor: pointer;
+        user-select: none;
+        transition: background 0.3s ease;
+        
+        &:hover {
+            background: $gray-200;
+        }
+        
+        &::after {
+            content: '↕';
+            margin-left: $spacing-sm;
+            opacity: 0.5;
+            font-size: $font-size-sm;
+        }
+    }
+    
+    tr:hover {
+        background: $gray-50;
+    }
+    
+    .role-badge {
+        display: inline-block;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $border-radius-sm;
+        font-size: $font-size-sm;
+        font-weight: 500;
+        
+        &.admin {
+            background: rgba($admin-color, 0.1);
+            color: $admin-color;
+        }
+        
+        &.regular {
+            background: rgba($regular-color, 0.1);
+            color: $regular-color;
+        }
+    }
+    
+    .actions {
+        display: flex;
+        gap: $spacing-sm;
+        
+        button {
+            padding: $spacing-xs $spacing-sm;
+            font-size: $font-size-sm;
+        }
+    }
+    
+    @include tablet {
+        overflow-x: auto;
+        
+        table {
+            min-width: 600px;
+        }
+    }
+}
+
+// User detail card
+.user-detail {
+    @include card;
+    max-width: 600px;
+    margin: $spacing-xl auto;
+    
+    .user-header {
+        text-align: center;
+        margin-bottom: $spacing-xl;
+        padding-bottom: $spacing-lg;
+        border-bottom: 2px solid $gray-200;
+        
+        h2 {
+            color: $primary-color;
+            margin-bottom: $spacing-sm;
+        }
+        
+        .role-badge {
+            display: inline-block;
+            padding: $spacing-xs $spacing-lg;
+            border-radius: $border-radius-xl;
+            font-weight: 500;
+            
+            &.admin {
+                background: $admin-color;
+                color: $white;
+            }
+            
+            &.regular {
+                background: $regular-color;
+                color: $white;
+            }
+        }
+    }
+    
+    .user-info {
+        .info-group {
+            margin-bottom: $spacing-md;
+            padding: $spacing-sm 0;
+            border-bottom: 1px solid $gray-200;
+            
+            label {
+                font-weight: 600;
+                color: $gray-700;
+                display: block;
+                margin-bottom: $spacing-xs;
+            }
+            
+            p {
+                margin: 0;
+                color: $gray-900;
+            }
+        }
+    }
+    
+    .user-actions {
+        display: flex;
+        gap: $spacing-md;
+        margin-top: $spacing-xl;
+        justify-content: center;
+    }
+}
+
+// Pagination
+.pagination {
+    @include flex-center;
+    gap: $spacing-sm;
+    margin-top: $spacing-xl;
+    flex-wrap: wrap;
+    
+    a, span {
+        padding: $spacing-sm $spacing-md;
+        border-radius: $border-radius-md;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    a {
+        background: $white;
+        border: 1px solid $gray-300;
+        color: $primary-color;
+        
+        &:hover {
+            background: $primary-color;
+            color: $white;
+            border-color: $primary-color;
+        }
+    }
+    
+    .current {
+        background: $primary-color;
+        color: $white;
+    }
+    
+    .step-links {
+        display: flex;
+        gap: $spacing-sm;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}

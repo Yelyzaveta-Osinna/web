@@ -1,0 +1,104 @@
+@import 'variables';
+
+// Responsive breakpoints
+@mixin mobile {
+    @media (max-width: #{$breakpoint-mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$breakpoint-tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
+
+// Flexbox utilities
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// Button styles
+@mixin button-base {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-md;
+    border-radius: $border-radius-md;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: $shadow-md;
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+@mixin button-variant($bg, $color: $white) {
+    background-color: $bg;
+    color: $color;
+    border-color: $bg;
+    
+    &:hover {
+        background-color: darken($bg, 10%);
+        border-color: darken($bg, 10%);
+    }
+}
+
+// Card style
+@mixin card {
+    background: $white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-md;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-lg;
+}
+
+// Modal overlay
+@mixin modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: $z-modal;
+    @include flex-center;
+}
+
+// Container
+@mixin container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+    
+    @include tablet {
+        padding: 0 $spacing-md;
+    }
+}

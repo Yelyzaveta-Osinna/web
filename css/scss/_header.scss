@@ -1,0 +1,115 @@
+@import 'variables';
+@import 'mixins';
+
+// Navigation bar
+.navbar {
+    background: $primary-color;
+    color: $white;
+    padding: $spacing-md 0;
+    box-shadow: $shadow-md;
+    position: sticky;
+    top: 0;
+    z-index: $z-header;
+    
+    .nav-container {
+        @include container;
+        @include flex-between;
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        a {
+            color: $white;
+            font-size: $font-size-xl;
+            font-weight: bold;
+            text-decoration: none;
+            
+            &:hover {
+                color: $gray-300;
+            }
+        }
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: $spacing-lg;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        a {
+            color: $white;
+            text-decoration: none;
+            padding: $spacing-sm 0;
+            transition: color 0.3s ease;
+            
+            &:hover {
+                color: $gray-300;
+            }
+        }
+    }
+    
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+        
+        .username {
+            font-weight: 500;
+        }
+        
+        .logout-form {
+            display: inline;
+            
+            button {
+                background: none;
+                border: none;
+                color: $white;
+                cursor: pointer;
+                padding: $spacing-sm;
+                
+                &:hover {
+                    color: $gray-300;
+                }
+            }
+        }
+    }
+    
+    @include tablet {
+        .nav-links {
+            width: 100%;
+            justify-content: center;
+            margin-top: $spacing-md;
+            gap: $spacing-md;
+        }
+        
+        .user-info {
+            width: 100%;
+            justify-content: center;
+            margin-top: $spacing-md;
+        }
+    }
+}
+
+// Breadcrumbs
+.breadcrumb {
+    padding: $spacing-md 0;
+    background: $gray-100;
+    margin-bottom: $spacing-lg;
+    
+    .breadcrumb-container {
+        @include container;
+    }
+    
+    a {
+        color: $primary-color;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    span {
+        color: $gray-600;
+    }
+}

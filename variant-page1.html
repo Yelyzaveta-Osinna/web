@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квитки - Укрзалізниця Lite</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">🚆 Укрзалізниця Lite</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Головна</a>
+                <a href="variant-page1.html">Квитки</a>
+                <a href="variant-page2.html">Рейси</a>
+                <a href="variant-page3.html">Пасажири</a>
+                <a href="users.html">Користувачі</a>
+            </div>
+            <div class="user-info">
+                <span class="username">👤 Admin</span>
+                <a href="index.html" class="btn btn-outline">Вийти</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="users-header">
+                <h1>Список квитків</h1>
+                <a href="#" class="btn btn-primary">➕ Продати квиток (демо)</a>
+            </div>
+
+            <div class="users-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Пасажир</th>
+                            <th>Рейс</th>
+                            <th>Дата</th>
+                            <th>Ціна</th>
+                            <th>Статус</th>
+                            <th>Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Петренко Іван</td>
+                            <td>Київ - Львів</td>
+                            <td>15.12.2024</td>
+                            <td>850 грн</td>
+                            <td><span class="role-badge" style="background:rgba(40,167,69,0.1); color:#28a745;">Підтверджено</span></td>
+                            <td class="actions">
+                                <a href="#" class="btn btn-outline">Деталі</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Шевченко Марія</td>
+                            <td>Харків - Одеса</td>
+                            <td>16.12.2024</td>
+                            <td>720 грн</td>
+                            <td><span class="role-badge" style="background:rgba(255,193,7,0.1); color:#ffc107;">Очікує</span></td>
+                            <td class="actions">
+                                <a href="#" class="btn btn-outline">Деталі</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Коваленко Андрій</td>
+                            <td>Дніпро - Київ</td>
+                            <td>17.12.2024</td>
+                            <td>450 грн</td>
+                            <td><span class="role-badge" style="background:rgba(40,167,69,0.1); color:#28a745;">Підтверджено</span></td>
+                            <td class="actions">
+                                <a href="#" class="btn btn-outline">Деталі</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <span class="step-links">
+                    <a href="#">&laquo; Перша</a>
+                    <a href="#">Попередня</a>
+                    <span class="current">Сторінка 1 з 2</span>
+                    <a href="#">Наступна</a>
+                    <a href="#">Остання &raquo;</a>
+                </span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Укрзалізниця Lite. Всі права захищено.</p>
+        </div>
+    </footer>
+</body>
+</html>

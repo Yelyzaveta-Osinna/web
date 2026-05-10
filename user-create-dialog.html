@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація - Укрзалізниця Lite</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">🚆 Укрзалізниця Lite</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Головна</a>
+                <a href="variant-page1.html">Квитки</a>
+                <a href="variant-page2.html">Рейси</a>
+                <a href="variant-page3.html">Пасажири</a>
+                <a href="users.html">Користувачі</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="form-container">
+            <h2>Реєстрація нового користувача</h2>
+
+            <div class="notification info">
+                Демонстраційна версія. Після реєстрації ви зможете увійти в систему.
+            </div>
+
+            <form action="login.html" method="get">
+                <div class="form-group">
+                    <label for="username">Логін *</label>
+                    <input type="text" id="username" class="form-control" placeholder="Введіть логін (мін. 3 символи)">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" class="form-control" placeholder="user@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">Повне ім'я *</label>
+                    <input type="text" id="fullname" class="form-control" placeholder="Іван Петренко">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль *</label>
+                    <input type="password" id="password" class="form-control" placeholder="Мінімум 6 символів">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Підтвердіть пароль *</label>
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Повторіть пароль">
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Роль *</label>
+                    <select id="role" class="form-select">
+                        <option value="regular">Звичайний користувач</option>
+                        <option value="admin">Адміністратор</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Зареєструватися</button>
+                    <a href="login.html" class="btn btn-outline">Скасувати</a>
+                </div>
+            </form>
+
+            <p class="text-center mt-4">
+                Вже є акаунт? <a href="login.html">Увійти</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Укрзалізниця Lite. Всі права захищено.</p>
+        </div>
+    </footer>
+</body>
+</html>
